@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="text-center mb-4">
+
+    <h2 class="fw-bold">📊 Generate Report</h2>
+    <p class="text-muted">Filter reviews by book and rating</p>
+
+</div>
+
+<div class="card shadow-sm p-4 mx-auto" style="max-width: 650px;">
+
+    <form action="/generate-report" method="post">
+
+        <!-- Book Filter -->
+        <div class="mb-3">
+            <label class="form-label">Select Book Title</label>
+            <select name="book_title" class="form-select">
+                <option value="All">All Books</option>
+                {% for book in book_titles %}
+                    <option value="{{ book.book_title }}">
+                        {{ book.book_title }}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <!-- Rating Filter -->
+        <div class="mb-3">
+            <label class="form-label">Select Rating</label>
+            <select name="rating" class="form-select">
+                <option value="All">All Ratings</option>
+                {% for rating in ratings %}
+                    <option value="{{ rating.rating }}">
+                        {{ rating.rating }}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="btn btn-primary w-100">
+            Generate Report
+        </button>
+
+    </form>
+
+    <!-- Back Button -->
+    <a href="/" class="btn btn-outline-secondary mt-3 w-100">
+        Back
+    </a>
+
+</div>
+
+{% endblock %}

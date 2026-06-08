@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="text-center mb-5">
+
+    <h1 class="display-5 fw-bold">📚 My Book Tracker</h1>
+    <p class="text-muted">Track, review, and analyze your reading list</p>
+
+</div>
+
+<div class="row justify-content-center">
+
+    <!-- Add Review -->
+    <div class="col-md-4 mb-3">
+        <div class="card shadow-sm text-center p-4 h-100">
+
+            <h4>➕ Add Review</h4>
+            <p class="text-muted">Write a new book review</p>
+
+            <a href="/add-review" class="btn btn-primary mt-auto">
+                Get Started
+            </a>
+
+        </div>
+    </div>
+
+    <!-- View Reviews -->
+    <div class="col-md-4 mb-3">
+        <div class="card shadow-sm text-center p-4 h-100">
+
+            <h4>📖 View Reviews</h4>
+            <p class="text-muted">See all your saved reviews</p>
+
+            <a href="/all-reviews" class="btn btn-success mt-auto">
+                View
+            </a>
+
+        </div>
+    </div>
+
+    <!-- Generate Report -->
+    <div class="col-md-4 mb-3">
+        <div class="card shadow-sm text-center p-4 h-100">
+
+            <h4>📊 Reports</h4>
+            <p class="text-muted">Analyze ratings and trends</p>
+
+            <a href="/generate-report" class="btn btn-warning mt-auto">
+                Generate
+            </a>
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

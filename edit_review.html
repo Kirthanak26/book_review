@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card shadow-sm p-4 mx-auto" style="max-width: 650px;">
+
+    <h3 class="mb-4">✏️ Edit Review</h3>
+
+    <form method="post">
+
+        <div class="mb-3">
+            <label class="form-label">Book Title</label>
+            <input type="text"
+                   name="book_title"
+                   class="form-control"
+                   value="{{ review.book_title }}"
+                   required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Review</label>
+            <textarea name="review_text"
+                      class="form-control"
+                      rows="5"
+                      required>{{ review.review_text }}</textarea>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Rating (1–10)</label>
+            <input type="number"
+                   name="rating"
+                   min="1"
+                   max="10"
+                   class="form-control"
+                   value="{{ review.rating }}"
+                   required>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">
+            Update Review
+        </button>
+
+    </form>
+
+    <a href="/all-reviews" class="btn btn-outline-secondary mt-3 w-100">
+        Back to Reviews
+    </a>
+
+</div>
+
+{% endblock %}
